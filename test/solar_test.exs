@@ -20,4 +20,16 @@ defmodule SolarTest do
     assert flares |> length == 8
   end
 
+  test "Classification X" do
+    assert %{classification: :X, scale: 1} |> Solar.power == 1000
+  end
+
+  test "Classification M" do
+    assert %{classification: :M, scale: 1} |> Solar.power == 10
+  end
+
+  test "Classification C" do
+    assert %{classification: :C, scale: 1} |> Solar.power == 1
+  end
+
 end
