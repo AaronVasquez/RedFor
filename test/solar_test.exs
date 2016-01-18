@@ -16,10 +16,6 @@ defmodule SolarTest do
     {:ok, data: flares}
   end
 
-  test "There are 8 solar flares", %{ data: flares } do
-    assert flares |> length == 8
-  end
-
   test "Classification X" do
     assert %{classification: :X, scale: 1} |> Solar.power == 1000
   end
@@ -30,6 +26,14 @@ defmodule SolarTest do
 
   test "Classification C" do
     assert %{classification: :C, scale: 1} |> Solar.power == 1
+  end
+
+  test "There are 8 solar flares", %{ data: flares } do
+    assert flares |> length == 8
+  end
+
+  test "Go inside", %{ data: flares } do
+    assert flares |> Solar.no_eva |> length == 3
   end
 
 end
