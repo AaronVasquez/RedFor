@@ -2,7 +2,11 @@ defmodule PhysicsTest do
   use ExUnit.Case
   doctest Physics
 
-  test "calculates earth's escape velocity" do
+  test "calculates Earth's escape velocity" do
     assert Physics.Rocketry.escape_velocity(:earth) == 11.2
+  end
+
+  test "calculates Mars's escape velocity" do
+    assert Physics.Rocketry.escape_velocity(:mars) == 5.1
   end
 end
