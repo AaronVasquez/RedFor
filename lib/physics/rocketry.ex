@@ -17,6 +17,8 @@ end
 defmodule Physics.Rocketry do
   import Calcs
 
+  @newtons_constant 6.67e-11
+
   @earth %{ mass: 5.972e24, radius: 6.371e6 }
   @mars %{ mass: 6.39e23, radius: 3.4e6 }
   @moon %{ mass: 7.35e22, radius: 1.738e6 }
@@ -42,8 +44,7 @@ defmodule Physics.Rocketry do
 
   
   defp calculate_escape(%{mass: mass, radius: radius}) do
-    newtons_constant = 6.67e-11
-    2 * newtons_constant * mass / radius
+    2 * @newtons_constant * mass / radius
       |> square_root
   end
 
