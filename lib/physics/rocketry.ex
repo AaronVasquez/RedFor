@@ -2,18 +2,10 @@ defmodule Physics.Rocketry do
   import Calcs
   import Physics.Laws
 
-  def escape_velocity(:earth) do
-    Planets.earth |> escape_velocity
-  end
-
-  def escape_velocity(:mars) do
-    Planets.mars |> escape_velocity
-  end
-
-  def escape_velocity(:moon) do
-    Planets.moon |> escape_velocity
-  end
-
+  def escape_velocity(), do: Planets.earth |> escape_velocity
+  def escape_velocity(:earth), do: Planets.earth |> escape_velocity
+  def escape_velocity(:mars), do: Planets.mars |> escape_velocity
+  def escape_velocity(:moon), do: Planets.moon |> escape_velocity
   def escape_velocity(planet) when is_map(planet) do
     planet
       |> calculate_escape
